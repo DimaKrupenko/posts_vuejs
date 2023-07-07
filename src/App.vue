@@ -1,8 +1,14 @@
 <template>
   <div>
-    <div class="post">
-      <div><strong>Название:</strong>Пост о JavaScript</div>
-      <div><strong>Описание:</strong>JavaScript универсальный язык програмирования</div>
+    <form>
+      <h4>Создание поста</h4>
+      <input type="text" placeholder="Название">
+      <input type="text" placeholder="Описание">
+      <button>Создать</button>
+    </form>
+    <div class="post" v-for="post in posts">
+      <div><strong>Название:</strong> {{ post.title }}</div>
+      <div><strong>Описание:</strong> {{ post.body }}</div>
     </div>
   </div>
 
