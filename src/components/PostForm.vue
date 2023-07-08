@@ -13,8 +13,8 @@
             type="text" 
             placeholder="Описание"
           >
-          <my-button 
-          class="btn" 
+          <my-button  
+          style="align-self: flex-end;margin-top: 15px;"
           @click="createPost"
           >Создать</my-button>
         </form>
