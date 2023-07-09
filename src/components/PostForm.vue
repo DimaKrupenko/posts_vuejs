@@ -6,12 +6,14 @@
             class="input" 
             type="text" 
             placeholder="Название"
+            required
           >
           <input 
             v-model="post.body"
             class="input" 
             type="text" 
             placeholder="Описание"
+            required
           >
           <my-button  
           style="align-self: flex-end;margin-top: 15px;"
@@ -21,12 +23,9 @@
 </template>
 
 <script>
-import MyButton from './UI/MyButton'
 
 export default {
-    components: {
-        MyButton
-    },
+    
     data() {
             return {
                 post: {
