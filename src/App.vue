@@ -1,8 +1,15 @@
 <template>
   <div class="app">
-   <post-form 
-   @create="createPost" 
-  />
+    <h1>Страница с постами</h1>
+    <my-button @click="showDialog" >
+      Создать пост
+    </my-button>
+    <my-dialog v-model:show="dialogVisible">
+      <post-form 
+        @create="createPost" 
+      />
+    </my-dialog>
+  
    <post-list 
    :posts="posts"
    @remove="removePost"
@@ -26,15 +33,19 @@ export default {
         {id: 2, title: 'Javascript2', body: 'Описание поста2'},
         {id: 3, title: 'Javascript3', body: 'Описание поста3'},
       ],
-      
+      dialogVisible: false
     }
   },
   methods: {
     createPost(post) {
     this.posts.push(post)
+    this.dialogVisible = false
     },
    removePost(post) {
      this.posts = this.posts.filter(p => p.id !== post.id)
+    },
+    showDialog() {
+     this.dialogVisible = true
    }
   }
 }
