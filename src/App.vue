@@ -30,10 +30,9 @@ export default {
   },
   methods: {
     createPost(post) {
-      if (post.length > 0) {
-        this.posts.push(post)
-      }
-      console.log('Поля должны быть заполненны')
+    
+    this.posts.push(post)
+      
    }
   }
 }
