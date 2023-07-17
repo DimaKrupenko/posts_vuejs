@@ -80,6 +80,7 @@ export default {
     },
     changePage(pageNumber) {
       this.page = pageNumber
+      this.fetchPosts()
     },
    async fetchPosts() {
      try { 
@@ -139,6 +140,7 @@ margin-top: 15px;
 .page {
   border: 1px solid black;
   padding: 10px;
+  cursor: pointer;
 }
 .current-page {
 border: 2px solid teal;
