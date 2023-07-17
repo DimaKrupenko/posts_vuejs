@@ -105,7 +105,6 @@ export default {
      async loadMorePosts() {
        try {
         this.page += 1
-        this.isPostsLoading = true
         const response = await axios.get('https://jsonplaceholder.typicode.com/posts',
           {
             params: {
@@ -117,9 +116,7 @@ export default {
         this.posts = [...this.posts, ...response.data]
       } catch (e) {
         alert('ошибка')
-      } finally {
-        this.isPostsLoading = false
-      }
+      } 
     },
   },
    mounted() {
